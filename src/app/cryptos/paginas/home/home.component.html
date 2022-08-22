@@ -1,0 +1,33 @@
+<p>home works!</p>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push">
+        <mat-toolbar color="primary">
+            <span>Menu</span>
+            <span class="espaciador"></span>
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+        <mat-nav-list>
+            <a routerLink="./listado" mat-list-item 
+            (click)="sidenav.toggle()" >
+                <mat-icon mat-list-icon>label</mat-icon>
+                <span>Listado de crypto currencies</span>
+            </a>
+            <a routerLink="./listaacronimos" mat-list-item 
+            (click)="sidenav.toggle()" >
+                <mat-icon mat-list-icon>label</mat-icon>
+                <span>Listado de acronimos</span>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-toolbar>
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </mat-toolbar>
+    <div>
+        <!-- <h2>Listado de Cryptos</h2> -->
+        <router-outlet class="contenedor"></router-outlet>
+    </div>
+</mat-sidenav-container>

@@ -1,0 +1,33 @@
+<!-- <p>listado works!</p> -->
+
+<mat-grid-list cols="1" *ngIf="!_listaCurrencies; else templateListaCryptos">
+    <mat-grid-tile>
+        <mat-spinner [diameter]="50"></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+<ng-template #templateListaCryptos>
+    <div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px">
+        <div fxFlex="30" *ngFor="let cc of listaCryptoCurrencies.listaCC">
+
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>{{cc.name}}</mat-card-title>
+                    <mat-card-subtitle>{{cc.acronym}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <strong>Precio en USD: </strong><h2>{{cc.price_USD}}</h2>
+                    <strong>Variacion 24 hrs: </strong><h2>{{cc.changeLast24Hours}}</h2>
+                </mat-card-content>
+            </mat-card>
+            <!-- <ul>
+        <li *ngFor="let cc of listaCryptoCurrencies.listaCC">
+            {{cc.acronym}}
+        </li>
+        <li>
+            {{listaCryptoCurrencies.listaCC[0].name}}
+        </li>
+    </ul> -->
+
+        </div>
+    </div>
+</ng-template>
